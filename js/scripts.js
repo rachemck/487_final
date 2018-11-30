@@ -1,31 +1,51 @@
 
-
-
-  var Raleigh = {lat:35.7794007, lng:-78.6534671};
+  var Raleigh = {lat:35.890998, lng:-78.755598};
   var Queens = {lat:40.7444485, lng:-73.9541946};
   var Arling = {lat:38.8775894, lng:-77.1259524};
+  var raleighMap;
+  var trafficLayer;
+
+function toggleTraffic() {
+  if (trafficLayer.getMap() == null) {
+    //traffic layer is disabled.. enable it
+    trafficLayer.setMap(raleighMap);
+  } else {
+    //traffic layer is enabled.. disable it
+    trafficLayer.setMap(null);
+  }
+}
 
 function initMap() {
 
     var raleighMap = new google.maps.Map(
         document.getElementById('Ral'), {
-          zoom: 13,
+          zoom: 10.5,
           center: Raleigh
         });
+
+        var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(raleighMap);
+        google.maps.event.addDomListener(document.getElementById('trafficToggle'), 'click', toggleTraffic);
+
         //map of Raleigh
 
-    var map = new google.maps.Map(
+    var nyMap = new google.maps.Map(
         document.getElementById('Que'), {
           zoom: 13,
           center: Queens
         });
+        var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(nyMap);
         //map for Queens area
 
-    var map = new google.maps.Map(
+    var arlingMap = new google.maps.Map(
         document.getElementById('Arl'), {
           zoom: 13,
           center: Arling
         });
+
+        var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(arlingMap);
         //map for Arlington
 
       //declare images for markers
@@ -38,17 +58,20 @@ function initMap() {
         icon: image
       });
 
-      var markerlocations = [
-            [35.778450, -78.643175, 'Bus', '../img/bus.png']
+      var markerRaleigh = [
+            [35.780779, -78.650215, '1 Mayo Street', '../img/bus.png']
 
         ];
-        for(i  = 0;  i < markerlocations.length; i++) {
+
+        //marker locations for Raleigh
+        for(i  = 0;  i < markerRaleigh.length; i++) {
             var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(markerlocations[i][0], markerlocations[i][1]),
+                    position: new google.maps.LatLng(markerRaleigh[i][0], markerRaleigh[i][1]),
                     map: raleighMap,
-                    icon:  markerlocations[i][3]
+                    icon:  markerRaleigh[i][3]
             });
-            var address = '<div><p><b>markerlocations[i][2]</b></p></div>';
+            //clickable
+            var address = '<div><p><b>hi</b></p></div>';
             var infowindow = new google.maps.InfoWindow({
               content: address
             });
@@ -66,30 +89,147 @@ function initMap() {
 $(function(){
   var appId = config.transit_app_id;
   var appCode = config.transit_app_code;
-  var myKey = config.MY_KEY;
-  var url2 = 'https://developer.nrel.gov/api/cleap/v1/city_vmt_estimates?api_key=' +myKey;
-  var incomeData = [];
-  var drugs = [];
-  console.log(url2);
+  var transitURL = 'https://transit.api.here.com/v3/coverage/search.json';
 
+
+  //ajax call for Raleigh transit API
   $.ajax({
-  url: 'https://transit.api.here.com/v3/stations/by_geocoord.json',
+  url: transitURL,
   type: 'GET',
   dataType: 'jsonp',
   jsonp: 'callbackFunc',
   data: {
-    center: '40.745177, -73.949627',
-    radius: '350',
+    name: 'raleigh',
     app_id: appId,
-    app_code:appCode
-
+    app_code: appCode,
+    max: '50',
+    details : '1',
+    politicalview: 'CHN',
+    lang: 'en'
   },
   success: function (data) {
     console.log(data);
   },
-
-    error:function(msg){
-      console.log('WTF');
-    }
   });
+
+  //ajax call for Durham transit API
+  $.ajax({
+  url: transitURL,
+  type: 'GET',
+  dataType: 'jsonp',
+  jsonp: 'callbackFunc',
+  data: {
+    name: 'durham',
+    app_id: appId,
+    app_code: appCode,
+    max: '50',
+    details : '1',
+    politicalview: 'CHN',
+    lang: 'en'
+  },
+  success: function (data) {
+    console.log(data);
+  },
+  });
+
+  //ajax call for Arlington transit API
+  $.ajax({
+  url: transitURL,
+  type: 'GET',
+  dataType: 'jsonp',
+  jsonp: 'callbackFunc',
+  data: {
+    name: 'arlington',
+    app_id: appId,
+    app_code: appCode,
+    max: '50',
+    details : '1',
+    politicalview: 'CHN',
+    lang: 'en'
+  },
+  success: function (data) {
+    console.log(data);
+  },
+  });
+
+  //ajax call for DC transit API
+  $.ajax({
+  url: transitURL,
+  type: 'GET',
+  dataType: 'jsonp',
+  jsonp: 'callbackFunc',
+  data: {
+    name: 'Washington',
+    app_id: appId,
+    app_code: appCode,
+    max: '50',
+    details : '1',
+    politicalview: 'CHN',
+    lang: 'en'
+  },
+  success: function (data) {
+    console.log(data);
+  },
+  });
+
+  //ajax call for NYC transit API
+  $.ajax({
+  url: transitURL,
+  type: 'GET',
+  dataType: 'jsonp',
+  jsonp: 'callbackFunc',
+  data: {
+    name: 'New York',
+    app_id: appId,
+    app_code: appCode,
+    max: '50',
+    details : '1',
+    politicalview: 'CHN',
+    lang: 'en'
+  },
+  success: function (data) {
+    console.log(data);
+  },
+  });
+
+  //news
+
+  var myKey = config.news_key;
+  var url = 'https://newsapi.org/v2/everything?q=amazon+hq2&from=2018-11-14&pageSize=10&sortBy=relevancy&apiKey=' + myKey;
+  var urlArray = [url];
+  var data = [];
+  var html = '';
+  var articles = [];
+  var i = '';
+
+  for (i=0; i < urlArray.length; i ++){
+
+
+
+  $.ajax({
+    type:'GET',
+    url: urlArray[i],
+    dataType:'json',
+    async: true,
+    data: data,
+    success:function(data){
+      console.log(data.articles);
+      articles = data.articles;
+      articles.forEach(function(article){
+          console.log(article.title);
+          html +='<div class="latest-news flex">';
+            html +='<img class="thumbnail" src="' + article.urlToImage + '">';
+            html +='<div class="text">';
+            html +='<a href="' + article.url + '" target="_blank">';
+            html +='<h2 class="headline">' + article.title + '</h2>';
+            html +='<h4 class="byline">by ' + article.author + ', <em>' + article.source.name + '</em></h4>';
+            html +='</a></div>';
+            html +='</div>';
+      });
+      $('#results').html(html);
+    } //success
+  }); //ajax request
+  }
+
+
 });

@@ -1,9 +1,73 @@
+#grid-setup {
+  display: grid;
+  grid-template-columns:  20% 60% 20%;
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas:
+  'hd hd hd'
+  '. ral .'
+  '. que .'
+  '. arl .'
+  '. article .';
+  margin: 0 auto;
+}
+
+#ral-container{
+  grid-area: ral;
+}
+#que-container{
+  grid-area: que;
+}
+#arl-container{
+  grid-area: arl;
+}
+#article-container{
+  grid-area: article;
+}
 #Ral{
-  height: 600px;
+  height: 400px;
 }
 #Que{
-  height: 600px;
+  height: 400px;
 }
 #Arl{
-  height: 600px;
+  height: 400px;
+}
+
+#header{
+  grid-area: hd;
+  color: white;
+  height: 250px;
+  background-color: #FF8300;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+
+a{
+  text-decoration: none;
+  color: black;
+
+}
+
+.latest-news{
+  border: 1px solid #dddddd;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 2px 2px 5px #cccccc;
+}
+
+.thumbnail{
+  flex-basis: 20%;
+  max-width: 20%;
+  height: auto;
+  margin-right: 10px;
+}
+
+.text{
+  flex-basis: 80%;
 }

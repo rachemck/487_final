@@ -6,23 +6,44 @@
 </head>
 <body>
 
+  <div id="grid-setup">
 
+<div id="header">
+<h1>Amazon's HQ2:</h1>
+<h3>Did Raleigh really stand a chance?</h3>
+</div>
 
-  <div id="Ral"></div>
+<div id="ral-container">
+  <button id="trafficToggle">Toggle Traffic Layer</button>
+  <div id="Ral"></div><!--change back to Ral -->
+  <h2>Total Stops</h2>
+  <h2>Population</h2>
+  <h2>Housing Cost</h2>
+  <img src="img/raleigh-walk.svg">
+  <img src="img/raleigh-transit.svg">
+  <img src="img/raleigh-bike.svg">
+</div>
+
+<div id="que-container">
   <div id="Que"></div>
+</div>
+
+<div id="arl-container">
   <div id="Arl"></div>
+</div>
 
-
-
+<div id="article-container">
   <div id="results">
+</div>
   <!---content will go here--->
 
   </div>
 
+</div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGB5A-j5ETDFVDqlQ0l0fVvx7I9RQYXDU&callback=initMap"
-    async defer></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGB5A-j5ETDFVDqlQ0l0fVvx7I9RQYXDU&libraries=places&callback=initMap" async defer></script>
   <script src="js/config.js"></script>
 
   <script src="js/scripts.js"></script>
