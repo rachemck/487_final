@@ -4,7 +4,7 @@
   var Arling = {lat:38.8775894, lng:-77.1259524};
   var raleighMap;
   var trafficLayer;
-
+//Traffic on/off function
 function toggleTraffic() {
   if (trafficLayer.getMap() == null) {
     //traffic layer is disabled.. enable it
@@ -17,36 +17,37 @@ function toggleTraffic() {
 
 function initMap() {
 
+  //map of Raleigh
     var raleighMap = new google.maps.Map(
         document.getElementById('Ral'), {
-          zoom: 10.5,
+          zoom: 9.5,
           center: Raleigh
         });
-
+        //Raleigh traffic layer
         var trafficLayer = new google.maps.TrafficLayer();
         trafficLayer.setMap(raleighMap);
         google.maps.event.addDomListener(document.getElementById('trafficToggle'), 'click', toggleTraffic);
 
-        //map of Raleigh
 
+      //map for Queens area
     var nyMap = new google.maps.Map(
         document.getElementById('Que'), {
-          zoom: 13,
+          zoom: 10,
           center: Queens
         });
         var trafficLayer = new google.maps.TrafficLayer();
         trafficLayer.setMap(nyMap);
-        //map for Queens area
 
+//map for Arlington
     var arlingMap = new google.maps.Map(
         document.getElementById('Arl'), {
-          zoom: 13,
+          zoom: 11,
           center: Arling
         });
 
         var trafficLayer = new google.maps.TrafficLayer();
         trafficLayer.setMap(arlingMap);
-        //map for Arlington
+
 
       //declare images for markers
       var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
