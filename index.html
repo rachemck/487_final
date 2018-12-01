@@ -1,48 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Airport Data</title>
+  <title>Amazon HQ2</title>
   <link rel="stylesheet" href="css/styles.css" type="text/css" />
+  <link rel="icon" href="img/icon.png" type="img/png" />
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Oxygen" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Amazon HQ2 and Raleigh">
+  <meta name="keywords" content="Amazon, HQ2, Raleigh, Arlington, Long Island City, Queens, NYC">
+  <meta name="author" content="Rachel McKinney">
 </head>
 <body>
 
   <div id="grid-setup">
 
-<div id="header">
-<h1>Amazon's HQ2:</h1>
-<h3>Did Raleigh really stand a chance?</h3>
+<div id="header" class="flex">
+
+    <img id="amazon-smile"src="img/smile.png">
+    <div id="headline-container">
+      <h1 class="headlines">Amazon's HQ2:</h1>
+      <h3 class="subheader">Did Raleigh really stand a chance?</h3>
+
+</div>
 </div>
 
 <div id="ral-container">
-  <h1>Raleigh, NC</h1>
-  <p>Raleigh made the top 20 list of locations for Amazon's new HQ2 location out of 236 cities vying to become Amazon's home
+  <p>By Rachel McKinney</p>
+  <p>On September, 7th 2017, Amazon announced to the world that they would be opening a second headquarters, kicking off a massive competition between municipalities to win over Amazon and the 50,000 high-paying jobs their headquarters would bring. Raleigh, NC  managed to make the top 20 list of locations for Amazon's new HQ2 location out of the 236 cities vying to become Amazon's home. On November 13th 2018, Amazon announced it's new HQ2 would be split between Arlington, VA and Long Island City, NYC. So how did Raleigh stack up against these cities? Let's take a look at what Amazon was looking for from municipalities.</p>
 
-  <button id="trafficToggle">Toggle Traffic Layer</button>
+  <h1>Amazon's HQ2 Wish List:</h1>
+  <ol>
+    <li>30 miles to population centers</li>
+    <li>45 minutes to an international airport</li>
+    <li>No more than 1-2 miles from major highways</li>
+    <li>Direct access to public transit</li>
+    <li>Tax incentives</li>
+    <li>Educated labor pool and strong university System</li>
+    <li>An overall high quality of life</li>
+  </ol>
+  <p>View Amazon's offical RFP <a href="https://images-na.ssl-images-amazon.com/images/G/01/Anything/test/images/usa/RFP_3._V516043504_.pdf" target="_blank">here</a><p>
+  <h1>Downtown Raleigh, NC</h1>
+
+
+  <button id="hide-traffic-ral">Hide Traffic Layer</button>
+  <button id="show-traffic-ral">Add Traffic Layer</button>
+
   <div id="Ral"></div><!--change back to Ral -->
-  <h2>Total Stops</h2>
+  <h2>Total Stops: 1,383</h2>
+  <h2>Total Routes: 48</h2>
   <h2>Population</h2>
-  <h2>Housing Cost</h2>
-  <img src="img/raleigh-walk.svg">
-  <img src="img/raleigh-transit.svg">
-  <img src="img/raleigh-bike.svg">
+  <h2>Housing Cost: $151/square ft</h2>
+  <div class="flex img-scores">
+    <img src="img/raleigh-walk.svg">
+    <img src="img/raleigh-transit.svg">
+    <img src="img/raleigh-bike.svg">
+  </div>
   <p class="source">Data from <a href="https://www.walkscore.com/" target="_blank">Walk Score</a></p>
 </div>
 
 <div id="que-container">
-  <h1>Long Island City, NYC
+  <h1>Long Island City, New York, NY</h1>
+  <button id="hide-traffic-ny">Hide Traffic Layer</button>
+  <button id="show-traffic-ny">Add Traffic Layer</button>
   <div id="Que"></div>
-  <img src="img/ny-walk.svg">
-  <img src="img/ny-transit.svg">
-  <img src="img/ny-bike.svg">
+  <h2>Total Stops: 1,321</h2>
+  <h2>Total Routes: 105</h2>
+  <h2>Population</h2>
+  <h2>Housing Cost: $508/square ft</h2>
+  <div class="flex img-scores">
+    <img src="img/ny-walk.svg">
+    <img src="img/ny-transit.svg">
+    <img src="img/ny-bike.svg">
+  </div>
   <p class="source">Data from <a href="https://www.walkscore.com/" target="_blank">Walk Score</a></p>
 </div>
 
 <div id="arl-container">
-  <h1>Arlington, VA</h1>
+  <h1>National Landing, Arlington, VA</h1>
+  <button id="hide-traffic-arl">Hide Traffic Layer</button>
+  <button id="show-traffic-arl">Add Traffic Layer</button>
   <div id="Arl"></div>
-  <img src="img/arl-walk.svg">
-  <img src="img/arl-transit.svg">
-  <img src="img/arl-bike.svg">
+  <h2>Total Stops: 17,307</h2>
+  <h2>Total Routes: 552</h2>
+  <h2>Population</h2>
+  <h2>Housing Cost: $463/square ft</h2>
+  <div class="flex img-scores">
+    <img src="img/arl-walk.svg">
+    <img src="img/arl-transit.svg">
+    <img src="img/arl-bike.svg">
+  </div>
   <p class="source">Data from <a href="https://www.walkscore.com/" target="_blank">Walk Score</a></p>
 </div>
 

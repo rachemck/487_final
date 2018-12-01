@@ -1,19 +1,36 @@
 
+//map centers
   var Raleigh = {lat:35.890998, lng:-78.755598};
   var Queens = {lat:40.7444485, lng:-73.9541946};
   var Arling = {lat:38.8775894, lng:-77.1259524};
-  var raleighMap;
+//airports pin
+  var rdu = {lat:35.879167, lng:-78.787445};
+  var laGua = {lat:40.776688, lng:-73.873436};
+  var jfk = {lat: 40.651311, lng:-73.797037};
+  var ronaldReagan = {lat: 38.851911, lng:-77.041266};
+  var dulles = {lat:38.950232, lng:-77.441512};
+  var newark = {lat:40.690409, lng:-74.180773};
+//colleges pin
+  var ncState ={lat:35.785825, lng:-78.681799};
+  var duke = {lat: 36.001059, lng:-78.938549};
+  var unc = {lat:35.911907, lng:-79.051192};
+
+  var georgeMason = {lat:38.884734, lng:-77.100808};
+  var georgeWash ={lat: 38.899662, lng:-77.048692};
+  var georgeTown = {lat:38.907549, lng:-77.072264};
+  var american = {lat:38.937312, lng:-77.089053};
+
+  var cityColl = {lat:40.819679, lng:-73.949708};
+  var columbia = {lat:40.807255, lng:-73.962133};
+  var nyu = {lat:40.729228, lng:-73.996766};
+//amazon location pin
+  var amazonRal = {lat: 35.777959, lng: -78.627680};
+  var amazonNyc = {lat:40.747658, lng:-73.956491};
+  var amazonArl = {lat:38.858734, lng:-77.051912};
+
+
   var trafficLayer;
 //Traffic on/off function
-function toggleTraffic() {
-  if (trafficLayer.getMap() == null) {
-    //traffic layer is disabled.. enable it
-    trafficLayer.setMap(raleighMap);
-  } else {
-    //traffic layer is enabled.. disable it
-    trafficLayer.setMap(null);
-  }
-}
 
 function initMap() {
 
@@ -25,47 +42,163 @@ function initMap() {
         });
         //Raleigh traffic layer
         var trafficLayer = new google.maps.TrafficLayer();
-        trafficLayer.setMap(raleighMap);
-        google.maps.event.addDomListener(document.getElementById('trafficToggle'), 'click', toggleTraffic);
+        trafficLayer.setMap(null);
+
+        $('#hide-traffic-ral').click(function(){
+          trafficLayer.setMap(null);
+        });
+
+        $('#show-traffic-ral').click(function(){
+            trafficLayer.setMap(raleighMap);
+        });
 
 
       //map for Queens area
     var nyMap = new google.maps.Map(
         document.getElementById('Que'), {
-          zoom: 10,
+          zoom: 11,
           center: Queens
         });
         var trafficLayer = new google.maps.TrafficLayer();
-        trafficLayer.setMap(nyMap);
+        trafficLayer.setMap(null);
+
+        $('#hide-traffic-ny').click(function(){
+          trafficLayer.setMap(null);
+        });
+
+        $('#show-traffic-ny').click(function(){
+            trafficLayer.setMap(nyMap);
+        });
 
 //map for Arlington
     var arlingMap = new google.maps.Map(
         document.getElementById('Arl'), {
-          zoom: 11,
+          zoom: 13,
           center: Arling
         });
 
         var trafficLayer = new google.maps.TrafficLayer();
-        trafficLayer.setMap(arlingMap);
+        trafficLayer.setMap(null);
+
+        $('#hide-traffic-arl').click(function(){
+          trafficLayer.setMap(null);
+        });
+
+        $('#show-traffic-arl').click(function(){
+            trafficLayer.setMap(arlingMap);
+        });
 
 
-      //declare images for markers
-      var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+      //declare images for airport markers
+  var ralAriportMarker = new google.maps.Marker({
+    position: rdu,
+    map: raleighMap,
+    icon: '../img/airport.png'
+  });
+  var nycAriportMarker1 = new google.maps.Marker({
+    position: laGua,
+    map: nyMap,
+    icon: '../img/airport.png'
+  });
+  var nycAriportMarker2 = new google.maps.Marker({
+    position: jfk,
+    map: nyMap,
+    icon: '../img/airport.png'
+  });
+  var nycAriportMarker3 = new google.maps.Marker({
+    position: newark,
+    map: nyMap,
+    icon: '../img/airport.png'
+  });
+  var arlAirportMarker = new google.maps.Marker({
+    position: ronaldReagan,
+    map: arlingMap,
+    icon: '../img/airport.png'
+  });
+  var arlAirportMarker2 = new google.maps.Marker({
+    position: dulles,
+    map: arlingMap,
+    icon: '../img/airport.png'
+  });
 
-      //start of placement for markers
-      var beachMarker = new google.maps.Marker({
-        position: {lat: -33.890, lng: 151.274},
-        map: map,
-        icon: image
-      });
+    //declare images for college markers
+    var ncStateMarker = new google.maps.Marker({
+      position: ncState,
+      map: raleighMap,
+      icon: '../img/college.png'
+    });
+    var dukeMarker = new google.maps.Marker({
+      position: duke,
+      map: raleighMap,
+      icon: '../img/college.png'
+    });
+    var uncMarker = new google.maps.Marker({
+      position: unc,
+      map: raleighMap,
+      icon: '../img/college.png'
+    });
 
-      var markerRaleigh = [
-            [35.780779, -78.650215, '1 Mayo Street', '../img/bus.png']
+    var columbiaMarker = new google.maps.Marker({
+      position: columbia,
+      map: nyMap,
+      icon: '../img/college.png'
+    });
+    var nyuMarker = new google.maps.Marker({
+      position: nyu,
+      map: nyMap,
+      icon: '../img/college.png'
+    });
+    var cityCollMarker = new google.maps.Marker({
+      position: cityColl,
+      map: nyMap,
+      icon: '../img/college.png'
+    });
 
-        ];
+
+    var georgeMasonMarker = new google.maps.Marker({
+      position: georgeMason,
+      map: arlingMap,
+      icon: '../img/college.png'
+    });
+
+    var georgeWashMarker = new google.maps.Marker({
+      position: georgeWash,
+      map: arlingMap,
+      icon: '../img/college.png'
+    });
+    var georgeTownMarker = new google.maps.Marker({
+      position: georgeTown,
+      map: arlingMap,
+      icon: '../img/college.png'
+    });
+
+    var americanMarker = new google.maps.Marker({
+      position: american,
+      map: arlingMap,
+      icon: '../img/college.png'
+    });
+
+    //declare images for amazon markers
+  var amazonRalMarker = new google.maps.Marker({
+    position: amazonRal,
+    map: raleighMap,
+    icon: '../img/amazon-marker.png'
+  });
+  var amazonNycMarker = new google.maps.Marker({
+    position: amazonNyc,
+    map: nyMap,
+    icon: '../img/amazon-marker.png'
+  });
+  var amazonArlMarker = new google.maps.Marker({
+    position: amazonArl,
+    map: arlingMap,
+    icon: '../img/amazon-marker.png'
+  });
+
+  //declar images for college markers
 
         //marker locations for Raleigh
-        for(i  = 0;  i < markerRaleigh.length; i++) {
+      /*  for(i  = 0;  i < markerRaleigh.length; i++) {
             var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(markerRaleigh[i][0], markerRaleigh[i][1]),
                     map: raleighMap,
@@ -78,12 +211,12 @@ function initMap() {
             });
             marker.addListener('click', function() {
               infowindow.open(map, marker);
-            });
+            }); */
 
 
 
 } //close of initMap
-}
+
 
 
 //API for public transportation data

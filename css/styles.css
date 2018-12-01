@@ -1,4 +1,5 @@
 #grid-setup {
+  margin: 0 auto;
   display: grid;
   grid-template-columns:  20% 60% 20%;
   grid-template-rows: repeat(5, auto);
@@ -8,7 +9,24 @@
   '. que .'
   '. arl .'
   '. article .';
-  margin: 0 auto;
+}
+
+h1{
+  font-family: 'Abril Fatface', cursive;
+}
+
+body{
+  font-family: 'Oxygen', sans-serif;
+}
+
+.img-scores{
+  justify-content: center !important;
+}
+
+.img-scores img{
+  max-width: 30%;
+  height: auto;
+  flex-basis: 30%;
 }
 
 #ral-container{
@@ -40,6 +58,8 @@
   background-color: #FF8300;
   background-size: contain;
   background-repeat: no-repeat;
+  flex-direction: row;
+  justify-content: space-around;
 }
 .flex{
   display: flex;
@@ -70,4 +90,69 @@ a{
 
 .text{
   flex-basis: 80%;
+}
+
+.headlines{
+  font-family: 'Abril Fatface', cursive;
+  font-size: 65px;
+  margin-bottom: 0px;
+}
+
+.subheader{
+  font-family: 'Oxygen', sans-serif;
+  font-size: 30px;
+}
+
+.flex{
+  display: flex;
+}
+ol {
+  list-style: none;
+  counter-reset: my-awesome-counter;
+}
+ol li {
+  counter-increment: my-awesome-counter;
+}
+ol li::before {
+  content: counter(my-awesome-counter) ". ";
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
+
+
+@media screen and (max-width:870px){
+  #grid-setup {
+    display: grid;
+    grid-template-columns:  1fr;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+    'hd'
+    'ral'
+    'que'
+    'arl'
+    'article';
+    margin: 0 auto;
+  }
+
+  #header{
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .headlines{
+    font-size: 40px;
+    margin: 0 auto;
+  }
+  .subheader{
+    font-size: 25px;
+    margin: 0 auto;
+  }
+
+  #amazon-smile{
+    width: 250px;
+  }
+
 }
