@@ -11,12 +11,61 @@
   '. article .';
 }
 
+.nested-grid{
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+  'pop cost'
+  'stops routes';
+  grid-row-gap: 30px;
+  grid-column-gap: 30px;
+}
+
+.icons{
+  height: 100px;
+}
+
+.orange-white{
+  background-color: #FF8300;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pop{
+  grid-area: pop;
+
+}
+
+.cost{
+  grid-area: cost;
+
+}
+
+.stops{
+  grid-area: stops;
+
+}
+
+.routes{
+  grid-area: routes;
+
+}
+
 h1{
   font-family: 'Abril Fatface', cursive;
 }
 
 body{
   font-family: 'Oxygen', sans-serif;
+}
+
+p{
+  line-height: 1.7em;
 }
 
 .img-scores{
@@ -71,7 +120,11 @@ body{
 a{
   text-decoration: none;
   color: black;
+}
 
+a:hover{
+  text-decoration: underline;
+  color:
 }
 
 .latest-news{
@@ -134,6 +187,19 @@ ol li::before {
     'arl'
     'article';
     margin: 0 auto;
+  }
+
+  .nested-grid{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns:  1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    'pop'
+    'cost'
+    'stops'
+    'routes';
+    grid-gap: 10px;
   }
 
   #header{
