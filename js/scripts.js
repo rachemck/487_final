@@ -88,112 +88,238 @@ function initMap() {
             trafficLayer.setMap(arlingMap);
         });
 
-
       //declare images for airport markers
-  var ralAriportMarker = new google.maps.Marker({
+
+      var ralAirportInfo = new google.maps.InfoWindow({
+          content: '<p>Raleigh-Durham International Airport</p>'
+        });
+  var ralAirportMarker = new google.maps.Marker({
     position: rdu,
     map: raleighMap,
     icon: '../img/airport.png'
   });
-  var nycAriportMarker1 = new google.maps.Marker({
+  ralAirportMarker.addListener('click', function() {
+          ralAirportInfo.open(raleighMap, ralAirportMarker);
+        });
+//////
+var nycAirportInfo = new google.maps.InfoWindow({
+    content: '<p>La Guardia Airport</p>'
+  });
+  var nycAirportMarker1 = new google.maps.Marker({
     position: laGua,
     map: nyMap,
     icon: '../img/airport.png'
   });
-  var nycAriportMarker2 = new google.maps.Marker({
+  nycAirportMarker1.addListener('click', function() {
+          nycAirportInfo.open(nyMap, nycAirportMarker1);
+        });
+  ////
+  var nycAirportInfo2 = new google.maps.InfoWindow({
+      content: '<p>JFK International Airport</p>'
+    });
+  var nycAirportMarker2 = new google.maps.Marker({
     position: jfk,
     map: nyMap,
     icon: '../img/airport.png'
   });
-  var nycAriportMarker3 = new google.maps.Marker({
+  nycAirportMarker2.addListener('click', function() {
+          nycAirportInfo2.open(nyMap, nycAirportMarker2);
+        });
+  ///
+  var nycAirportInfo3 = new google.maps.InfoWindow({
+      content: '<p>Newark International Airport</p>'
+    });
+  var nycAirportMarker3 = new google.maps.Marker({
     position: newark,
     map: nyMap,
     icon: '../img/airport.png'
   });
+  nycAirportMarker3.addListener('click', function() {
+          nycAirportInfo3.open(nyMap, nycAirportMarker3);
+        });
+  ///
+  var arlAirportInfo = new google.maps.InfoWindow({
+      content: '<p>Ronald Reagan Airport</p>'
+    });
   var arlAirportMarker = new google.maps.Marker({
     position: ronaldReagan,
     map: arlingMap,
     icon: '../img/airport.png'
+  });
+  arlAirportMarker.addListener('click', function() {
+          arlAirportInfo.open(arlingMap, arlAirportMarker);
+        });
+///
+var arlAirportInfo2 = new google.maps.InfoWindow({
+    content: '<p>Dulles International Airport</p>'
   });
   var arlAirportMarker2 = new google.maps.Marker({
     position: dulles,
     map: arlingMap,
     icon: '../img/airport.png'
   });
+  arlAirportMarker2.addListener('click', function() {
+          arlAirportInfo2.open(arlingMap, arlAirportMarker2);
+        });
+///
 
     //declare images for college markers
+    var ncStateInfo = new google.maps.InfoWindow({
+        content: '<p>North Carolina State University </p>'
+      });
     var ncStateMarker = new google.maps.Marker({
       position: ncState,
       map: raleighMap,
       icon: '../img/college.png'
+    });
+    ncStateMarker.addListener('click', function() {
+            ncStateInfo.open(raleighMap, ncStateMarker);
+          });
+  ///
+  var dukeInfo = new google.maps.InfoWindow({
+      content: '<p>Duke University </p>'
     });
     var dukeMarker = new google.maps.Marker({
       position: duke,
       map: raleighMap,
       icon: '../img/college.png'
     });
+    dukeMarker.addListener('click', function() {
+            dukeInfo.open(raleighMap, dukeMarker);
+          });
+  ///
+  var uncInfo = new google.maps.InfoWindow({
+      content: '<p>University of North Carolina at Chapel Hill</p>'
+    });
     var uncMarker = new google.maps.Marker({
       position: unc,
       map: raleighMap,
       icon: '../img/college.png'
     });
-
+    uncMarker.addListener('click', function() {
+            uncInfo.open(raleighMap, uncMarker);
+          });
+///
+var columbiaInfo = new google.maps.InfoWindow({
+    content: '<p>Columbia University</p>'
+  });
     var columbiaMarker = new google.maps.Marker({
       position: columbia,
       map: nyMap,
       icon: '../img/college.png'
     });
+    columbiaMarker.addListener('click', function() {
+            columbiaInfo.open(nyMap, columbiaMarker);
+          });
+///
+var nyuInfo = new google.maps.InfoWindow({
+    content: '<p>New York University</p>'
+  });
     var nyuMarker = new google.maps.Marker({
       position: nyu,
       map: nyMap,
       icon: '../img/college.png'
+    });
+    nyuMarker.addListener('click', function() {
+            nyuInfo.open(nyMap, nyuMarker);
+          });
+  ///
+  var cityCollInfo = new google.maps.InfoWindow({
+      content: '<p>City College of New York</p>'
     });
     var cityCollMarker = new google.maps.Marker({
       position: cityColl,
       map: nyMap,
       icon: '../img/college.png'
     });
-
-
+    cityCollMarker.addListener('click', function() {
+            cityCollInfo.open(nyMap, cityCollMarker);
+          });
+///
+var georgeMasonInfo = new google.maps.InfoWindow({
+    content: '<p>George Mason University</p>'
+  });
     var georgeMasonMarker = new google.maps.Marker({
       position: georgeMason,
       map: arlingMap,
       icon: '../img/college.png'
     });
-
+    georgeMasonMarker.addListener('click', function() {
+            georgeMasonInfo.open(arlingMap, georgeMasonMarker);
+          });
+///
+var georgeWashInfo = new google.maps.InfoWindow({
+    content: '<p>George Washington University</p>'
+  });
     var georgeWashMarker = new google.maps.Marker({
       position: georgeWash,
       map: arlingMap,
       icon: '../img/college.png'
     });
+    georgeWashMarker.addListener('click', function() {
+            georgeWashInfo.open(arlingMap, georgeWashMarker);
+          });
+///
+var georgeTownInfo = new google.maps.InfoWindow({
+    content: '<p>Georgetown University</p>'
+  });
     var georgeTownMarker = new google.maps.Marker({
       position: georgeTown,
       map: arlingMap,
       icon: '../img/college.png'
     });
-
+    georgeTownMarker.addListener('click', function() {
+            georgeTownInfo.open(arlingMap, georgeTownMarker);
+          });
+///
+var americanInfo = new google.maps.InfoWindow({
+    content: '<p>American University</p>'
+  });
     var americanMarker = new google.maps.Marker({
       position: american,
       map: arlingMap,
       icon: '../img/college.png'
     });
-
+    americanMarker.addListener('click', function() {
+            americanInfo.open(arlingMap, americanMarker);
+          });
+///
+var amazonRalInfo = new google.maps.InfoWindow({
+    content: '<p>Hypothetical Amazon HQ2 Site</p>'
+  });
     //declare images for amazon markers
   var amazonRalMarker = new google.maps.Marker({
     position: amazonRal,
     map: raleighMap,
     icon: '../img/amazon-marker.png'
   });
+  amazonRalMarker.addListener('click', function() {
+          amazonRalInfo.open(raleighMap, amazonRalMarker);
+        });
+///
+var amazonNycInfo = new google.maps.InfoWindow({
+    content: '<p>Hypothetical Amazon HQ2 Site</p>'
+  });
   var amazonNycMarker = new google.maps.Marker({
     position: amazonNyc,
     map: nyMap,
     icon: '../img/amazon-marker.png'
+  });
+  amazonNycMarker.addListener('click', function() {
+          amazonNycInfo.open(nyMap, amazonNycMarker);
+        });
+///
+var amazonArlInfo = new google.maps.InfoWindow({
+    content: '<p>Hypothetical Amazon HQ2 Site</p>'
   });
   var amazonArlMarker = new google.maps.Marker({
     position: amazonArl,
     map: arlingMap,
     icon: '../img/amazon-marker.png'
   });
+  amazonArlMarker.addListener('click', function() {
+          amazonArlInfo.open(nyMap, amazonArlMarker);
+        });
 
   //declar images for college markers
 
@@ -339,7 +465,7 @@ $(function(){
   for (i=0; i < urlArray.length; i ++){
 
 
-
+///newsAPI
   $.ajax({
     type:'GET',
     url: urlArray[i],

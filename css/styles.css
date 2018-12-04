@@ -14,26 +14,73 @@
 .nested-grid{
   margin: 0 auto;
   display: grid;
-  grid-template-columns:  1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns:  2.5fr 4fr 4fr 2.5fr;
+  grid-template-rows: auto auto;
   grid-template-areas:
-  'pop cost'
-  'stops routes';
-  grid-row-gap: 30px;
-  grid-column-gap: 30px;
+  '. pop cost .'
+  '. stops routes .';
+  grid-row-gap: 40px;
+}
+
+button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #232F3E;
+    color: #ffffff;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    background: #0053ba;
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+.map{
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.source{
+  font-size: 10px;
+  font-style: italic;
 }
 
 .icons{
-  height: 100px;
+  height: 80px;
+  padding-bottom: 10px;
 }
 
 .orange-white{
+  margin: 0 auto;
   background-color: #FF8300;
   color: white;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2px;
+  text-align: center;
+  font-size: 12px;
+  width: 200px;
 }
 
 .pop{
@@ -190,16 +237,16 @@ ol li::before {
   }
 
   .nested-grid{
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns:  1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-    'pop'
-    'cost'
-    'stops'
-    'routes';
+
     grid-gap: 10px;
+  }
+
+  .icons{
+    height: 50px;
+  }
+
+  .orange-white{
+    font-size: 15px;
   }
 
   #header{

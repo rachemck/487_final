@@ -41,27 +41,40 @@
   <p>View Amazon's offical RFP <a href="https://images-na.ssl-images-amazon.com/images/G/01/Anything/test/images/usa/RFP_3._V516043504_.pdf" target="_blank">here</a><p>
   <h1>Downtown Raleigh, NC</h1>
 
-
+  <div class="flex">
   <button id="hide-traffic-ral">Hide Traffic Layer</button>
   <button id="show-traffic-ral">Add Traffic Layer</button>
+  <div class="flex">
+    <p><strong>Legend:</strong></p>
+    <img src="../img/airport.png">
+    <p>Airport</p>
+    <img src="../img/college.png">
+    <p>University</p>
+    <img src="../img/amazon-marker.png">
+    <p>Potential HQ2 Site</p>
+  </div>
+</div>
+  <div id="Ral" class="map"></div>
 
-  <div id="Ral"></div><!--change back to Ral -->
   <div class="nested-grid">
     <div class="pop orange-white">
-      <h2>Population</h2>
+      <h2>Population: xxxxxxxx</h2>
       <img class="icons" src="img/population.png">
     </div>
     <div class="cost orange-white">
       <h2>Housing Cost: $151/square ft</h2>
       <img class="icons" src="img/house.png">
+      <p class="source">Source: Zillow</p>
     </div>
     <div class="routes orange-white">
-      <h2>Total Routes: 48</h2>
+      <h2>Total Public Transit Routes: 48</h2>
       <img class="icons" src="img/routes.png">
+      <p class="source">Source: HERE Public Transit API</p>
     </div>
     <div class="stops orange-white">
-      <h2>Total Stops: 1,383</h2>
+      <h2>Total Public Transit Stops: 1,383</h2>
       <img class="icons" src="img/stops.png">
+      <p class="source">Source: HERE Public Transit API</p>
     </div>
 
   </div>
@@ -71,17 +84,22 @@
     <img src="img/raleigh-bike.svg">
   </div>
   <p class="source">Data from <a href="https://www.walkscore.com/" target="_blank">Walk Score</a></p>
+
+<h2>Overall</h2>
+
 </div>
+
+
 
 <div id="que-container">
   <h1>Long Island City, New York, NY</h1>
   <button id="hide-traffic-ny">Hide Traffic Layer</button>
   <button id="show-traffic-ny">Add Traffic Layer</button>
-  <div id="Que"></div>
-  <h2>Total Stops: 1,321</h2>
-  <h2>Total Routes: 105</h2>
-  <h2>Population</h2>
+  <div id="Que" class="map"></div>
+  <h2>Population:</h2>
   <h2>Housing Cost: $508/square ft</h2>
+  <h2>Total Stops: 17,307</h2>
+  <h2>Total Routes: 552</h2>
   <div class="flex img-scores">
     <img src="img/ny-walk.svg">
     <img src="img/ny-transit.svg">
@@ -94,17 +112,19 @@
   <h1>National Landing, Arlington, VA</h1>
   <button id="hide-traffic-arl">Hide Traffic Layer</button>
   <button id="show-traffic-arl">Add Traffic Layer</button>
-  <div id="Arl"></div>
-  <h2>Total Stops: 17,307</h2>
-  <h2>Total Routes: 552</h2>
+  <div id="Arl" class="map"></div>
   <h2>Population</h2>
   <h2>Housing Cost: $463/square ft</h2>
+  <h2>Total Stops: 1,321</h2>
+  <h2>Total Routes: 105</h2>
   <div class="flex img-scores">
     <img src="img/arl-walk.svg">
     <img src="img/arl-transit.svg">
     <img src="img/arl-bike.svg">
   </div>
   <p class="source">Data from <a href="https://www.walkscore.com/" target="_blank">Walk Score</a></p>
+  <h2>Summary</h2>
+  <p>Raleigh was certainly a competitive choice for Amazon's HQ2, and it is clear why it was able to make it into the top 20 contenders. Downtown Raleigh offers access to nearby highways, has a nearby internatinal airport, a strong university system and blows Arlington and Long Island City out of the water in terms of affordable housing. Raleigh definately lacks a solid public transport system. Of course, it is also important to remember that government tax incentives were a huge factor in the decision making process as well, not to mention that Amazon's CEO, Jeff Bazos owns the Washinton Post, which many speculate could have influnced Arlington being chosen.</p> 
 </div>
 
 <div id="article-container">
