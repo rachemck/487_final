@@ -97,7 +97,7 @@ function initMap() {
   var ralAirportMarker = new google.maps.Marker({
     position: rdu,
     map: raleighMap,
-    icon: '../img/airport.png'
+    icon: 'img/airport.png'
   });
   ralAirportMarker.addListener('click', function() {
           ralAirportInfo.open(raleighMap, ralAirportMarker);
@@ -109,7 +109,7 @@ var nycAirportInfo = new google.maps.InfoWindow({
   var nycAirportMarker1 = new google.maps.Marker({
     position: laGua,
     map: nyMap,
-    icon: '../img/airport.png'
+    icon: 'img/airport.png'
   });
   nycAirportMarker1.addListener('click', function() {
           nycAirportInfo.open(nyMap, nycAirportMarker1);
@@ -121,7 +121,7 @@ var nycAirportInfo = new google.maps.InfoWindow({
   var nycAirportMarker2 = new google.maps.Marker({
     position: jfk,
     map: nyMap,
-    icon: '../img/airport.png'
+    icon: 'img/airport.png'
   });
   nycAirportMarker2.addListener('click', function() {
           nycAirportInfo2.open(nyMap, nycAirportMarker2);
@@ -133,7 +133,7 @@ var nycAirportInfo = new google.maps.InfoWindow({
   var nycAirportMarker3 = new google.maps.Marker({
     position: newark,
     map: nyMap,
-    icon: '../img/airport.png'
+    icon: 'img/airport.png'
   });
   nycAirportMarker3.addListener('click', function() {
           nycAirportInfo3.open(nyMap, nycAirportMarker3);
@@ -145,7 +145,7 @@ var nycAirportInfo = new google.maps.InfoWindow({
   var arlAirportMarker = new google.maps.Marker({
     position: ronaldReagan,
     map: arlingMap,
-    icon: '../img/airport.png'
+    icon: 'img/airport.png'
   });
   arlAirportMarker.addListener('click', function() {
           arlAirportInfo.open(arlingMap, arlAirportMarker);
@@ -157,7 +157,7 @@ var arlAirportInfo2 = new google.maps.InfoWindow({
   var arlAirportMarker2 = new google.maps.Marker({
     position: dulles,
     map: arlingMap,
-    icon: '../img/airport.png'
+    icon: 'img/airport.png'
   });
   arlAirportMarker2.addListener('click', function() {
           arlAirportInfo2.open(arlingMap, arlAirportMarker2);
@@ -171,7 +171,7 @@ var arlAirportInfo2 = new google.maps.InfoWindow({
     var ncStateMarker = new google.maps.Marker({
       position: ncState,
       map: raleighMap,
-      icon: '../img/college.png'
+      icon: 'img/college.png'
     });
     ncStateMarker.addListener('click', function() {
             ncStateInfo.open(raleighMap, ncStateMarker);
@@ -183,7 +183,7 @@ var arlAirportInfo2 = new google.maps.InfoWindow({
     var dukeMarker = new google.maps.Marker({
       position: duke,
       map: raleighMap,
-      icon: '../img/college.png'
+      icon: 'img/college.png'
     });
     dukeMarker.addListener('click', function() {
             dukeInfo.open(raleighMap, dukeMarker);
@@ -195,7 +195,7 @@ var arlAirportInfo2 = new google.maps.InfoWindow({
     var uncMarker = new google.maps.Marker({
       position: unc,
       map: raleighMap,
-      icon: '../img/college.png'
+      icon: 'img/college.png'
     });
     uncMarker.addListener('click', function() {
             uncInfo.open(raleighMap, uncMarker);
@@ -207,7 +207,7 @@ var columbiaInfo = new google.maps.InfoWindow({
     var columbiaMarker = new google.maps.Marker({
       position: columbia,
       map: nyMap,
-      icon: '../img/college.png'
+      icon: 'img/college.png'
     });
     columbiaMarker.addListener('click', function() {
             columbiaInfo.open(nyMap, columbiaMarker);
@@ -219,7 +219,7 @@ var nyuInfo = new google.maps.InfoWindow({
     var nyuMarker = new google.maps.Marker({
       position: nyu,
       map: nyMap,
-      icon: '../img/college.png'
+      icon: 'img/college.png'
     });
     nyuMarker.addListener('click', function() {
             nyuInfo.open(nyMap, nyuMarker);
@@ -231,7 +231,7 @@ var nyuInfo = new google.maps.InfoWindow({
     var cityCollMarker = new google.maps.Marker({
       position: cityColl,
       map: nyMap,
-      icon: '../img/college.png'
+      icon: 'img/college.png'
     });
     cityCollMarker.addListener('click', function() {
             cityCollInfo.open(nyMap, cityCollMarker);
@@ -243,7 +243,7 @@ var georgeMasonInfo = new google.maps.InfoWindow({
     var georgeMasonMarker = new google.maps.Marker({
       position: georgeMason,
       map: arlingMap,
-      icon: '../img/college.png'
+      icon: 'img/college.png'
     });
     georgeMasonMarker.addListener('click', function() {
             georgeMasonInfo.open(arlingMap, georgeMasonMarker);
@@ -255,7 +255,7 @@ var georgeWashInfo = new google.maps.InfoWindow({
     var georgeWashMarker = new google.maps.Marker({
       position: georgeWash,
       map: arlingMap,
-      icon: '../img/college.png'
+      icon: 'img/college.png'
     });
     georgeWashMarker.addListener('click', function() {
             georgeWashInfo.open(arlingMap, georgeWashMarker);
@@ -267,7 +267,7 @@ var georgeTownInfo = new google.maps.InfoWindow({
     var georgeTownMarker = new google.maps.Marker({
       position: georgeTown,
       map: arlingMap,
-      icon: '../img/college.png'
+      icon: 'img/college.png'
     });
     georgeTownMarker.addListener('click', function() {
             georgeTownInfo.open(arlingMap, georgeTownMarker);
@@ -279,7 +279,7 @@ var americanInfo = new google.maps.InfoWindow({
     var americanMarker = new google.maps.Marker({
       position: american,
       map: arlingMap,
-      icon: '../img/college.png'
+      icon: 'img/college.png'
     });
     americanMarker.addListener('click', function() {
             americanInfo.open(arlingMap, americanMarker);
@@ -292,7 +292,7 @@ var amazonRalInfo = new google.maps.InfoWindow({
   var amazonRalMarker = new google.maps.Marker({
     position: amazonRal,
     map: raleighMap,
-    icon: '../img/amazon-marker.png'
+    icon: 'img/amazon-marker.png'
   });
   amazonRalMarker.addListener('click', function() {
           amazonRalInfo.open(raleighMap, amazonRalMarker);
@@ -304,7 +304,7 @@ var amazonNycInfo = new google.maps.InfoWindow({
   var amazonNycMarker = new google.maps.Marker({
     position: amazonNyc,
     map: nyMap,
-    icon: '../img/amazon-marker.png'
+    icon: 'img/amazon-marker.png'
   });
   amazonNycMarker.addListener('click', function() {
           amazonNycInfo.open(nyMap, amazonNycMarker);
@@ -316,15 +316,13 @@ var amazonArlInfo = new google.maps.InfoWindow({
   var amazonArlMarker = new google.maps.Marker({
     position: amazonArl,
     map: arlingMap,
-    icon: '../img/amazon-marker.png'
+    icon: 'img/amazon-marker.png'
   });
   amazonArlMarker.addListener('click', function() {
           amazonArlInfo.open(nyMap, amazonArlMarker);
         });
 
 } //close of initMap
-
-
 
 //API for public transportation data
 $(function(){
