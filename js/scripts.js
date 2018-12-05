@@ -2,7 +2,7 @@
 //map centers
   var Raleigh = {lat:35.890998, lng:-78.755598};
   var Queens = {lat:40.7444485, lng:-73.9541946};
-  var Arling = {lat:38.8775894, lng:-77.1259524};
+  var Arling = {lat:38.917275, lng:-77.128333};
 //airports pin
   var rdu = {lat:35.879167, lng:-78.787445};
   var laGua = {lat:40.776688, lng:-73.873436};
@@ -32,6 +32,7 @@
   var trafficLayer;
 //Traffic on/off function
 
+//start of Google maps call
 function initMap() {
 
   //map of Raleigh
@@ -73,7 +74,7 @@ function initMap() {
 //map for Arlington
     var arlingMap = new google.maps.Map(
         document.getElementById('Arl'), {
-          zoom: 13,
+          zoom: 10.3,
           center: Arling
         });
 
@@ -321,26 +322,6 @@ var amazonArlInfo = new google.maps.InfoWindow({
           amazonArlInfo.open(nyMap, amazonArlMarker);
         });
 
-  //declar images for college markers
-
-        //marker locations for Raleigh
-      /*  for(i  = 0;  i < markerRaleigh.length; i++) {
-            var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(markerRaleigh[i][0], markerRaleigh[i][1]),
-                    map: raleighMap,
-                    icon:  markerRaleigh[i][3]
-            });
-            //clickable
-            var address = '<div><p><b>hi</b></p></div>';
-            var infowindow = new google.maps.InfoWindow({
-              content: address
-            });
-            marker.addListener('click', function() {
-              infowindow.open(map, marker);
-            }); */
-
-
-
 } //close of initMap
 
 
@@ -360,26 +341,6 @@ $(function(){
   jsonp: 'callbackFunc',
   data: {
     name: 'raleigh',
-    app_id: appId,
-    app_code: appCode,
-    max: '50',
-    details : '1',
-    politicalview: 'CHN',
-    lang: 'en'
-  },
-  success: function (data) {
-    console.log(data);
-  },
-  });
-
-  //ajax call for Durham transit API
-  $.ajax({
-  url: transitURL,
-  type: 'GET',
-  dataType: 'jsonp',
-  jsonp: 'callbackFunc',
-  data: {
-    name: 'durham',
     app_id: appId,
     app_code: appCode,
     max: '50',
@@ -412,26 +373,6 @@ $(function(){
   },
   });
 
-  //ajax call for DC transit API
-  $.ajax({
-  url: transitURL,
-  type: 'GET',
-  dataType: 'jsonp',
-  jsonp: 'callbackFunc',
-  data: {
-    name: 'Washington',
-    app_id: appId,
-    app_code: appCode,
-    max: '50',
-    details : '1',
-    politicalview: 'CHN',
-    lang: 'en'
-  },
-  success: function (data) {
-    console.log(data);
-  },
-  });
-
   //ajax call for NYC transit API
   $.ajax({
   url: transitURL,
@@ -452,10 +393,10 @@ $(function(){
   },
   });
 
-  //news
+  //THIS IS MY THIRD API- retreives data for the routes/stops info
 
   var myKey = config.news_key;
-  var url = 'https://newsapi.org/v2/everything?q=amazon+hq2&from=2018-11-14&pageSize=10&sortBy=relevancy&apiKey=' + myKey;
+  var url = 'https://newsapi.org/v2/everything?q=amazon+hq2&pageSize=10&sortBy=relevancy&apiKey=' + myKey;
   var urlArray = [url];
   var data = [];
   var html = '';
@@ -490,6 +431,5 @@ $(function(){
     } //success
   }); //ajax request
   }
-
 
 });

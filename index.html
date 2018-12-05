@@ -26,7 +26,7 @@
 
 <div id="ral-container">
   <p>By Rachel McKinney</p>
-  <p>On September, 7th 2017, Amazon announced to the world that they would be opening a second headquarters, kicking off a massive competition between municipalities to win over Amazon and the 50,000 high-paying jobs their headquarters would bring. Raleigh, NC  managed to make the top 20 list of locations for Amazon's new HQ2 location out of the 236 cities vying to become Amazon's home. On November 13th 2018, Amazon announced it's new HQ2 would be split between Arlington, VA and Long Island City, NYC. So how did Raleigh stack up against these cities? Let's take a look at what Amazon was looking for from municipalities.</p>
+  <p>On September, 7th 2017, Amazon announced to the world that they would be opening a second headquarters (HQ2), kicking off a massive competition between municipalities to win over Amazon and the 50,000 high-paying jobs their headquarters would bring. The city of Raleigh managed to make the top 20 list of locations out of the 236 cities vying to become Amazon's newest home. On November 13th 2018, Amazon announced it's new HQ2 would be split between Arlington, VA and Long Island City, NYC. So how did Raleigh stack up against these cities? Let's take a look at what Amazon was looking for from municipalities.</p>
 
   <h1>Amazon's HQ2 Wish List:</h1>
   <ol>
@@ -35,15 +35,20 @@
     <li>No more than 1-2 miles from major highways</li>
     <li>Direct access to public transit</li>
     <li>Tax incentives</li>
-    <li>Educated labor pool and strong university System</li>
+    <li>Educated labor pool and strong university system</li>
     <li>An overall high quality of life</li>
   </ol>
   <p>View Amazon's offical RFP <a href="https://images-na.ssl-images-amazon.com/images/G/01/Anything/test/images/usa/RFP_3._V516043504_.pdf" target="_blank">here</a><p>
+    <hr>
   <h1>Downtown Raleigh, NC</h1>
 
-  <div class="flex">
-  <button id="hide-traffic-ral">Hide Traffic Layer</button>
   <button id="show-traffic-ral">Add Traffic Layer</button>
+  <button id="hide-traffic-ral">Hide Traffic Layer</button>
+
+  <!--raleigh map*/-->
+  <div id="Ral" class="map"></div>
+
+<!--
   <div class="flex">
     <p><strong>Legend:</strong></p>
     <img src="../img/airport.png">
@@ -51,84 +56,150 @@
     <img src="../img/college.png">
     <p>University</p>
     <img src="../img/amazon-marker.png">
-    <p>Potential HQ2 Site</p>
+    <p>HQ2 Site</p>
   </div>
-</div>
-  <div id="Ral" class="map"></div>
+-->
 
+<!--start of orange blocks-->
   <div class="nested-grid">
+
     <div class="pop orange-white">
-      <h2>Population: xxxxxxxx</h2>
+      <h2>Population:</h2>
+      <h2 class="line2">464,758</h2>
       <img class="icons" src="img/population.png">
+      <p class="source">Source: <a href="https://www.census.gov/quickfacts/fact/table/newyorkcitynewyork,raleighcitynorthcarolina,arlingtoncountyvirginia/PST045217" target="_blank"> U.S. Census</a></p>
     </div>
+
     <div class="cost orange-white">
-      <h2>Housing Cost: $151/square ft</h2>
+      <h2>Housing Cost: </h2>
+      <h2 class="line2">$151/square ft</h2>
       <img class="icons" src="img/house.png">
-      <p class="source">Source: Zillow</p>
+      <p class="source">Source: <a href="https://www.zillow.com/raleigh-nc/home-values/" target="_blank">Zillow</a></p>
     </div>
+
     <div class="routes orange-white">
       <h2>Total Public Transit Routes: 48</h2>
       <img class="icons" src="img/routes.png">
-      <p class="source">Source: HERE Public Transit API</p>
+      <p class="source">Source: <a href="https://developer.here.com/documentation/transit/topics/what-is.html" target="_blank">HERE Public Transit API</a></p>
     </div>
+
     <div class="stops orange-white">
       <h2>Total Public Transit Stops: 1,383</h2>
       <img class="icons" src="img/stops.png">
-      <p class="source">Source: HERE Public Transit API</p>
+      <p class="source">Source: <a href="https://developer.here.com/documentation/transit/topics/what-is.html" target="_blank">HERE Public Transit API</a></p>
     </div>
-
   </div>
+
   <div class="flex img-scores">
     <img src="img/raleigh-walk.svg">
     <img src="img/raleigh-transit.svg">
     <img src="img/raleigh-bike.svg">
   </div>
-  <p class="source">Data from <a href="https://www.walkscore.com/" target="_blank">Walk Score</a></p>
+  <p class="source">Score out of 100. Data from <a href="https://www.walkscore.com/" target="_blank">Walk Score.</a></p>
 
-<h2>Overall</h2>
-
+<hr>
 </div>
-
-
+<!--start of NYC content*/-->
 
 <div id="que-container">
   <h1>Long Island City, New York, NY</h1>
   <button id="hide-traffic-ny">Hide Traffic Layer</button>
   <button id="show-traffic-ny">Add Traffic Layer</button>
+
+  <!--ny map*/-->
   <div id="Que" class="map"></div>
-  <h2>Population:</h2>
-  <h2>Housing Cost: $508/square ft</h2>
-  <h2>Total Stops: 17,307</h2>
-  <h2>Total Routes: 552</h2>
+
+  <!--start of orange blocks-->
+  <div class="nested-grid">
+    <div class="pop orange-white">
+      <h2>Population:</h2>
+      <h2 class="line2">8,622,698</h2>
+      <img class="icons" src="img/population.png">
+      <p class="source">Source: <a href="https://www.census.gov/quickfacts/fact/table/newyorkcitynewyork,raleighcitynorthcarolina,arlingtoncountyvirginia/PST045217" target="_blank"> U.S. Census</a></p>
+    </div>
+
+    <div class="cost orange-white">
+      <h2>Housing Cost: </h2>
+      <h2 class="line2">$508/square ft</h2>
+      <img class="icons" src="img/house.png">
+      <p class="source">Source: <a href="https://www.zillow.com/raleigh-nc/home-values/" target="_blank">Zillow</a></p>
+    </div>
+
+    <div class="routes orange-white">
+      <h2>Total Public Transit Routes: 552</h2>
+      <img class="icons" src="img/routes.png">
+      <p class="source">Source: <a href="https://developer.here.com/documentation/transit/topics/what-is.html" target="_blank">HERE Public Transit API</a></p>
+    </div>
+
+    <div class="stops orange-white">
+      <h2>Total Public Transit Stops: 17,307</h2>
+      <img class="icons" src="img/stops.png">
+      <p class="source">Source: <a href="https://developer.here.com/documentation/transit/topics/what-is.html" target="_blank">HERE Public Transit API</a></p>
+    </div>
+  </div>
+
   <div class="flex img-scores">
     <img src="img/ny-walk.svg">
     <img src="img/ny-transit.svg">
     <img src="img/ny-bike.svg">
   </div>
-  <p class="source">Data from <a href="https://www.walkscore.com/" target="_blank">Walk Score</a></p>
+  <p class="source">Score out of 100. Data from <a href="https://www.walkscore.com/" target="_blank">Walk Score</a></p>
+  <hr>
 </div>
 
+<!--Arlington map-->
 <div id="arl-container">
   <h1>National Landing, Arlington, VA</h1>
   <button id="hide-traffic-arl">Hide Traffic Layer</button>
   <button id="show-traffic-arl">Add Traffic Layer</button>
+
+  <!--arlington map*/-->
   <div id="Arl" class="map"></div>
-  <h2>Population</h2>
-  <h2>Housing Cost: $463/square ft</h2>
-  <h2>Total Stops: 1,321</h2>
-  <h2>Total Routes: 105</h2>
+
+  <!--start of orange blocks-->
+  <div class="nested-grid">
+  <div class="pop orange-white">
+    <h2>Population:</h2>
+    <h2 class="line2">234,965</h2>
+    <img class="icons" src="img/population.png">
+    <p class="source">Source: <a href="https://www.census.gov/quickfacts/fact/table/newyorkcitynewyork,raleighcitynorthcarolina,arlingtoncountyvirginia/PST045217" target="_blank"> U.S. Census</a></p>
+  </div>
+
+  <div class="cost orange-white">
+    <h2>Housing Cost: </h2>
+    <h2 class="line2">$463/square ft</h2>
+    <img class="icons" src="img/house.png">
+    <p class="source">Source: <a href="https://www.zillow.com/raleigh-nc/home-values/" target="_blank">Zillow</a></p>
+  </div>
+
+  <div class="routes orange-white">
+    <h2>Total Public Transit Routes: 105</h2>
+    <img class="icons" src="img/routes.png">
+    <p class="source">Source: <a href="https://developer.here.com/documentation/transit/topics/what-is.html" target="_blank">HERE Public Transit API</a></p>
+  </div>
+
+  <div class="stops orange-white">
+    <h2>Total Public Transit Stops: 1,321</h2>
+    <img class="icons" src="img/stops.png">
+    <p class="source">Source: <a href="https://developer.here.com/documentation/transit/topics/what-is.html" target="_blank">HERE Public Transit API</a></p>
+  </div>
+  </div>
+
   <div class="flex img-scores">
     <img src="img/arl-walk.svg">
     <img src="img/arl-transit.svg">
     <img src="img/arl-bike.svg">
   </div>
-  <p class="source">Data from <a href="https://www.walkscore.com/" target="_blank">Walk Score</a></p>
+  <p class="source">Score out of 100. Data from <a href="https://www.walkscore.com/" target="_blank">Walk Score</a></p>
+
+<hr>
   <h2>Summary</h2>
-  <p>Raleigh was certainly a competitive choice for Amazon's HQ2, and it is clear why it was able to make it into the top 20 contenders. Downtown Raleigh offers access to nearby highways, has a nearby internatinal airport, a strong university system and blows Arlington and Long Island City out of the water in terms of affordable housing. Raleigh definately lacks a solid public transport system. Of course, it is also important to remember that government tax incentives were a huge factor in the decision making process as well, not to mention that Amazon's CEO, Jeff Bazos owns the Washinton Post, which many speculate could have influnced Arlington being chosen.</p> 
+  <p>Raleigh was certainly a competitive choice for Amazon's HQ2, and it is clear why it was able to make it into the top 20 contenders. Downtown Raleigh offers access to nearby highways, has a nearby internatinal airport, a strong university system and blows Arlington and Long Island City out of the water in terms of affordable housing. Raleigh definately lacks a solid public transport system. Of course, it is also important to remember that government tax incentives were a huge factor in the decision making process as well, not to mention that Amazon's CEO, Jeff Bazos owns the Washinton Post, which many speculate could have influnced Arlington being chosen.</p>
+</div>
 </div>
 
 <div id="article-container">
-  <h2>Keep up with the latest Amazon HQ2 news here:</h2>
+  <h2>Keep up with the latest Amazon news here:</h2>
   <div id="results">
 </div>
   <!---content will go here--->

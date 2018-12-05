@@ -19,25 +19,23 @@
   grid-template-areas:
   '. pop cost .'
   '. stops routes .';
-  grid-row-gap: 40px;
+  grid-gap: 20px;
 }
 
 button {
+    width: 10em;
     display: inline-block;
     border: none;
-    padding: 1rem 2rem;
-    margin: 0;
+    padding: 8px;
     text-decoration: none;
     background: #232F3E;
     color: #ffffff;
     font-family: 'Oxygen', sans-serif;
-    font-size: 1rem;
-    line-height: 1;
+    font-size: 15px;
     cursor: pointer;
     text-align: center;
     transition: background 250ms ease-in-out, transform 150ms ease;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+
 }
 
 button:hover,
@@ -45,10 +43,6 @@ button:focus {
     background: #0053ba;
 }
 
-button:focus {
-    outline: 1px solid #fff;
-    outline-offset: -4px;
-}
 
 button:active {
     transform: scale(0.99);
@@ -80,12 +74,16 @@ button:active {
   padding: 2px;
   text-align: center;
   font-size: 12px;
-  width: 200px;
+  width: 100%;
 }
 
 .pop{
   grid-area: pop;
 
+}
+
+.line2{
+  margin-top: -12px;
 }
 
 .cost{
@@ -117,6 +115,7 @@ p{
 
 .img-scores{
   justify-content: center !important;
+  margin-top: 10px;
 }
 
 .img-scores img{
@@ -164,9 +163,13 @@ p{
 
 }
 
-a{
+.orange-white a{
+  color: white;
+}
+
+a {
+  color: #0645AD;
   text-decoration: none;
-  color: black;
 }
 
 a:hover{
@@ -178,7 +181,7 @@ a:hover{
   border: 1px solid #dddddd;
   padding: 10px;
   margin: 10px;
-  box-shadow: 2px 2px 5px #cccccc;
+  box-shadow: 2px 2px 3px #cccccc;
 }
 
 .thumbnail{
@@ -198,10 +201,6 @@ a:hover{
   margin-bottom: 0px;
 }
 
-.subheader{
-  font-family: 'Oxygen', sans-serif;
-  font-size: 30px;
-}
 
 .flex{
   display: flex;
@@ -219,6 +218,9 @@ ol li::before {
   font-weight: bold;
 }
 
+#article-container a{
+  color: black;
+}
 
 
 
@@ -235,18 +237,36 @@ ol li::before {
     'article';
     margin: 0 auto;
   }
-
+  .map{
+    width: 100%;
+  }
   .nested-grid{
-
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns:2fr 2fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    'pop cost'
+    'stops routes';
     grid-gap: 10px;
+  }
+
+  .orange-white{
+    margin: 0 auto;
+    background-color: #FF8300;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px;
+    text-align: center;
+    font-size: 12px;
+    width: 160px;
   }
 
   .icons{
     height: 50px;
-  }
-
-  .orange-white{
-    font-size: 15px;
   }
 
   #header{
